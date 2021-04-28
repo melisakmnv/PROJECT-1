@@ -1,0 +1,229 @@
+
+document.addEventListener('DOMContentLoaded', () => {
+    const player = document.querySelector('#player');
+    const obstacles = document.querySelector('.obstacle');
+    const GAME_WIDTH = 1000;
+    const GAME_HEIGTH = 400;
+    let gameState = {
+        jump : false,
+        dead : false
+    };
+
+    let left = 0;
+    function moveForward() {
+        left += 10;
+        player.style.left = left + 'px';
+    }
+
+    function 
+
+
+    function moveBackward() {
+        let left = 0;
+        left -= 10;
+        player.style.right = left + 'px';
+
+
+    }
+
+    function jumpUp() {
+        player.classList.add('jumpUp');
+        setTimeout(function () {
+            player.classList.remove('jumpUp');
+        }, 800)
+    }
+
+    function slideDown() {
+
+    }
+
+    // Assign function to keycodes 
+
+
+    function control(event) {
+        if (event.keyCode === 39) {
+            moveForward()
+        }
+        if (event.keyCode === 32) {
+            jumpUp()
+        }
+    }
+
+    document.addEventListener('keydown', control);
+
+});
+
+
+
+// // function jumpUp(event) {
+// //     if (event.keyCode === 32 ) {
+// //         player.classList.add('jumpUp');
+// //         // setTimeout(function (){
+// //         //     player.classList.remove('jumpUp');
+// //         // },800)
+// //     }
+// // }
+
+// function slideDown (event) {
+//     if (event.keyCode === 32 ) {
+//         player.classList.add('slideDown');
+//         setTimeout(function (){
+//             player.classList.remove('slideDown');
+//         },800)
+//     }
+// } 
+
+
+
+// window.addEventListener('keydown', slideDown); 
+
+
+// // function removeObstacle(){
+// //     if(obstacles > GAME_WIDTH ){
+// //         obstacles.classList.remove('obstacle')
+// //     }
+// //     return obstacles; 
+// // }
+
+// // console.log(removeObstacle());
+
+
+
+
+
+/*
+document.addEventListener('DOMContentLoaded', () => {
+    const player = document.querySelector('#player');
+    const obstacles = document.querySelector('.obstacle');
+    const GAME_WIDTH = 1000;
+    const GAME_HEIGTH = 400;
+
+
+    // ASSIGN JUMP FUNCTION 
+
+    let bottom = 0;
+    function jumpUp() {
+        let jumpTime = setInterval(function () {
+            if (bottom === 150) {
+                clearInterval(jumpTime)
+                let fallTime = setInterval(function () {
+                    if (bottom === 0) {
+                        clearInterval(fallTime)
+                    }
+                    bottom -= 30
+                    player.style.bottom = bottom + 'px';
+                }, 30)
+            }
+            bottom += 30; // here player will stop at y -30 
+            player.style.bottom = bottom + 'px';
+        }, 30);
+    }
+
+
+
+
+    // ASSING COLLIDING LOGIC 
+    // if 0BSTACLE X < 50 && PLAYER Y = 0 (1)
+    // if PLAYER Y < 50 && OBSTACLE X = 0 (2)
+
+    function control(event) {
+        if (event.keyCode === 32) {
+            jumpUp();
+        }
+    }
+
+    document.addEventListener('keydown', control);
+});
+
+*/
+
+// function initialize () {
+//     createRabbit();
+//     // jumpUp();
+//     // control();
+// }
+
+// initialize();
+
+// function createRabbit (){
+//     const rabbit = document.createElement("div")
+//     rabbit.className = "player"
+//     gameContainer.appendChild(rabbit)
+// }
+
+
+// function randomObstacles () {
+//     let randomObstPosition = 1300;
+//     const randomObst = document.createElement('div')
+//     randomObst.className = "obstacle";
+//     game.appendChild(randomObst);
+
+//     let moveObs = setInterval(function () {
+//         if (randomObst === 0) {
+//             clearInterval(moveObs)
+//             alert('Game 0ver')
+//         }
+
+//         randomObstPosition -= 10
+//         obstacles.style.left = randomObstPosition + 'px';
+//     }, 20)
+// }
+
+// randomObstacles();
+
+
+// function createPlayer() {
+//     const $player = document.createElement("img")
+//     $player.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/21542/DemoRpgCharacter.png";
+//     $player.className = "player";
+//     $player.classList.add('Character_spritesheet')
+//     game.appendChild($player);
+// }
+
+// createPlayer();
+
+
+function control(event) {
+//     if (event.keyCode === 39) {
+//         moveForward()
+//     }
+//     if (event.keyCode === 32) {
+//         if (jumpState === false) {
+//             jumpState = true;
+//             jumpUp();
+//         }
+//     }
+//     if (event.keyCode === 32) {
+//         moveUp()
+//     }
+//     if (event.keyCode === 13) {
+//         moveObstacleForward()
+//     }
+// }
+
+
+// let left = 0;
+// function moveForward() {
+//     left += 10;
+//     player.style.left = left + 'px';
+// }
+
+// let obsGoleft = 0;
+// function moveObstacleForward() {
+//     obsGoleft += 10;
+//     obstacles.style.left = obsGoleft + 'px';
+// }
+
+// let bottom = 0;
+// function moveUp() {
+//     bottom +=10;
+//     player.style.bottom = bottom + 'px';
+// }
+
+#player {
+    width: 50px;
+    height: 100px;
+    background-color: slategray;
+    position: relative;
+    top: 200px;
+}
