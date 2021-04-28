@@ -18,10 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
    
     function jumpUp () {
         player.classList.add('jumping')
-        player.classList.remove('moving')
         let jumpTime = setTimeout(() => {
             player.classList.remove('jumping')
-            player.classList.add('moving')
         }, 600);
     }
 
@@ -31,8 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
             let playerPosition = player.getBoundingClientRect();
             let obstaclePosition = obstacle.getBoundingClientRect();
             if ((playerPosition.right >= obstaclePosition.left) && (playerPosition.bottom >= obstaclePosition.top)) {
-                obstacle.classList.remove('obstacleMoving')
-                alert('Game Over, Your score is' + scoreCounter);
+                container.classList.remove('scrollingBg');
+                obstacle.classList.remove('obstacleMoving');
+                // alert('Game Over, Your score is' + scoreCounter);
                 scoreCounter = 0;
             }
             else {}

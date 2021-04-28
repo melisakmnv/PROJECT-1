@@ -34,15 +34,21 @@ body {
     }
   }
 
+.character {
+    position: absolute;
+    width: 75px;
+    height: 90 px;
+    right: -10px;
+    overflow: hidden;
+}
+
+
 .player {
     position: relative;
-    width: 80px;
-    height: 105px;
-    top: 200px; 
-    left: 100px;
-    background-image: url("images/spritesheet run.png") ;
-    background-color: palevioletred;
-    background-size: 800px 100px;
+    width: 50px;
+    height: 70px;
+    top: 230px; 
+    left: 100px; 
 }
 
 
@@ -53,33 +59,29 @@ body {
 
  @keyframes jump {  
     0% {top: 200px;}
-    /* 30% {top: 100px;}
-    70% {top: 100px}  */
     50% {top: 100px}
     100% {top: 200px;}
 }
 
-/* .moving {
-    animation: moveSpritesheet 1000ms steps(8) infinite;
-    width: calc(128px * var(--pixel-size));
-    position: relative;
-} */
+.moving {
+    animation: runningCat 800ms steps(8) infinite;
+}
 
- @keyframes moveSpritesheet {
+ @keyframes runningCat {
     from {
-       transform: translate3d(0px,0,0)
+       transform: translate3d(0,0,0px)
     }
     to {
-       transform: translate3d(-100%,0,0)
+       transform: translate3d(-100%,0,100px)
     }
  } 
 
-.container > .obstacle {
+.obstacle {
     width: 50px;
     height: 50px;
     background-color: pink;
     position: relative;
-    top: 150px;
+    top: 180px;
     left: 750px;
 }
 
