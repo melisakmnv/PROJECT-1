@@ -1,95 +1,712 @@
 
-
 body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Original Surfer', cursive;
     background-color: slategrey;
+    overflow-x: hidden;
 }
- 
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================== */
+/* =======  GRID  ======= */
+/* =========================== */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "sprite1 sprite2 sprite3 sprite4"
+      "desc1 desc2 desc3 desc4";
+  }
+  .sprite1 { grid-area: sprite1; }
+  .sprite2 { grid-area: sprite2; }
+  .sprite3 { grid-area: sprite3; }
+  .sprite4 { grid-area: sprite4; }
+  .desc1 { grid-area: desc1; }
+  .desc2 { grid-area: desc2; }
+  .desc3 { grid-area: desc3; }
+  .desc4 { grid-area: desc4; }
+
+/* ============================ */
+/* =======    BUTTONS   ======= */
+/* ============================ */
+
+
+
+
+.game {
+    position: relative;
+    
+}
+
+.game-hidden {
+    display: none;
+}
+
+/* =========================== */
+/* =======    HEADER   ======= */
+/* =========================== */
+
+header {
+    max-width: 100vw;
+    text-align: center;
+    color: seashell;
+    background-color: wheat;
+    font-size: 2em;
+    padding: 3px;
+    letter-spacing: 10px;
+}
+
+
+.nav-bar {
+    position: relative;
+    left: 85%;
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+    display: block;
+}
+
+#menu {
+    background-color: slategrey;
+    border: none;
+    padding: .5em;
+    font-size: 2em;
+    position: relative;
+    left: 85%;
+    font-family: 'Original Surfer', cursive;
+    background: linear-gradient(to right, #008aff, #00ffe7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate
+{
+  0%,100%
+  {
+    filter: hue-rotate(0deg);
+  }
+  50%
+  {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.menu-list {
+    list-style:none;
+    padding:0;
+    margin:1em 0 0 0;
+    transition: all 0.8s cubic-bezier(.15,.7,0,1);
+    padding: 1em;
+    margin-bottom: 2em;
+    visibility: hidden;
+}
+
+
+
+/* =========================== */
+/* =======  SECTION 1  ======= */
+/* =========================== */
+
+
+  /* ==== HIDDEN PART ===== */
+
+.hidden {
+    width: 1100px;
+    border: 1px solid black;
+    text-align: center;
+    display: none;
+}
+
+.displayA {
+    width: 600px;
+    background-color: palegoldenrod;
+    padding: 20px;
+    line-height: 35px;
+    letter-spacing: 2.5px;
+    word-spacing: 3px;
+    text-align: center;
+    border-radius: 20px;
+}
+.img {
+    background-image: url('img/IDLEsheet.png');
+    width: 270px;
+    height: 237px;
+    margin: auto;
+    animation: action1 1s steps(10) infinite;
+}
+
+@keyframes action1 {
+    100% {
+        background-position: -2730px, 0;
+    }
+}
+
+
+/* =========================== */
+/* =======  SECTION 2  ======= */
+/* =========================== */
+
+
+.displayB {
+
+    background-color: seashell;
+    text-align: center;
+    border-radius: 20px;
+}
+
+
+.rules{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    height: 260px;
+}
+
+.rule1 {
+    width:25%;
+    height: 213px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rule1 > p {
+    margin: 0;
+    padding: 0;
+    width: 270px;
+    transform: translate(0%, -5%); 
+}
+#demonstrateRunning {
+    position: relative;
+    background-image: url('img/run75.png');
+    width: 110px;
+    height: 120px;
+    animation: action2 1s steps(8) infinite; 
+    transform: translate(60%, -5%); 
+}
+
+@keyframes action2 {
+    100% {
+        background-position: -1104px, 0;;
+    }
+}
+
+
+.rule2 {
+    width:25%;
+    height: 213px;
+    display: flex;
+    flex-direction: column;
+
+}
+.rule2 > p {
+    margin: 0;
+    padding: 0;
+    width: 270px;
+    transform: translate(0%, -5%); 
+}
+#demonstrateJumping {
+    position: relative;
+    background-image: url('img/jump75.png');
+    width: 110px;
+    height: 120px;
+    animation: action2 1s steps(8) infinite; 
+    transform: translate(60%, -5%); 
+}
+
+.rule3 {
+    margin: auto;
+    width:25%;
+    height: 213px;
+    display: flex;
+    flex-direction: column;
+
+}
+.rule3 > p {
+    margin: 0;
+    padding: 0;
+    width: 270px;
+}
+#demonstrateSliding {
+    position: relative;
+    background-image: url('img/slide75.png');
+    width: 110px;
+    height: 120px;
+    animation: action2 1s steps(8) infinite; 
+    transform: translate(60%, -5%); 
+}
+
+
+.rule4 {
+    width:25%;
+    height: 213px;
+    display: flex;
+    flex-direction: column;
+
+}
+.rule4 > p {
+    margin: 0;
+    padding: 0;
+    width: 270px;
+    transform: translate(0%, -5%); 
+}
+#demonstrateFainting {
+    position: relative;
+    background-image: url('img/faint75.png');
+    width: 135px;
+    height: 120px;
+    animation: action3 1s steps(10) infinite; 
+    transform: translate(60%, -5%); 
+}
+
+@keyframes action3 {
+    100% {
+        background-position: -1410px, 0;;
+    }
+}
+
+
+/* =========================== */
+/* =======  SECTION 3  ======= */
+/* =========================== */
+
+.displayC {
+    background-color: tan;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.sec3-title {
+    margin-top: 50px;
+}
+
+.demonstrateObstacles {
+    width: 100%;
+    height: 750px;
+    display: flex;
+    flex-wrap: wrap;
+    margin:auto;
+    margin-top: 20px;
+}
+
+.obst {
+    width: 33%;
+}
+
+.obst > img {
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+.img4 {
+    transform: translate(-1%, 38%); 
+}
+
+.img9 {
+    transform: translate(-1%, 38%); 
+}
+
+.img10 {
+    transform: translate(-5%, 8%); 
+}
+
+.img11 {
+    transform: translate(-16%, 27%); 
+}
+.img12 {
+    transform: translate(18%, 38%); 
+}
+.img13 {
+    transform: translate(163%, -104%); 
+}
+
+
+/* =========================== */
+/* =======  SECTION 4  ======= */
+/* =========================== */
+
+.displayD {
+    background-color: darksalmon;
+    padding: 20px;
+    line-height: 35px;
+    letter-spacing: 2.5px;
+    word-spacing: 3px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+
+/* =========================== */
+/* =======  SECTION 5  ======= */
+/* =========================== */
+
+.firstPageChamoue {
+    background-image: url('img/run100.png');
+    width: 476px;
+    height: 476px;
+    animation: displayRun 1s steps(8) infinite; 
+    margin: auto;
+}
+
+@keyframes displayRun {
+    100% {
+        background-position: -4352px, 0;
+    }
+}
+
+.firstPageChamoue + p {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+.chamoue-hidden {
+    display: none;
+}
+
+/* ============================ */
+/* ======= GAME SECTION ======= */
+/* ============================ */
+
+/* --------  GAME SCREEN  ------- */
+
+
 
 .container {
-    margin: auto;
-    width: 1000px;
+    width: 100vw;
     height: 300px;
+    margin: auto;
     border: 1px solid orange;
-    background-image: url("images/Background.jpg");
-    background-position: bottom;
-    background-repeat: repeat-x;
-    background-size: 5000px;
+    border-bottom: hidden;
+    position: relative;
     overflow: hidden;
-
 }
 
-.scrollingBg {
-    animation: scroll 20s linear infinite;
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('img/Background.jpg');
+    background-size:  5000px;
+    background-position: bottom left;
+    width: 50000px;
+    display: block;
+    background-repeat: repeat-x;
 }
 
-@keyframes scroll {
-    from {
-      background-position-x: 5000px;
+.container.scrollingBg::before {
+    animation: scrolling 40s linear infinite;
+}
+
+@keyframes scrolling { 
+ 
+    100% {
+        transform: translateX(-5000px);
     }
-    to {
-      background-position-x: 0px;
-    }
-  }
+}
+
+
+/* --------  PLAYER SETTING  ------- */
 
 .character {
-    position: absolute;
     width: 75px;
-    height: 90 px;
-    right: -10px;
-    overflow: hidden;
+    height: 100px;
+    position: absolute;
+    top: 200px;
+    left: 150px;
+}
+ 
+.jump {
+    animation : jumps 800ms;
+}
+
+@keyframes jumps {
+    0% {top: 200px} 
+    50% {top: 50px} 
+    100% {top: 200px} 
 }
 
 
-.player {
-    position: relative;
-    width: 50px;
-    height: 70px;
-    top: 230px; 
-    left: 100px; 
+/* --------  PLAYER ATTRIBUT  ------- */
+
+/* DEFAULT*/
+
+.stayStill {
+    position: absolute;
+    background-image: url('img/idle75.png');
+    width: 110px;
+    height: 120px;
+    animation : stand 1s steps(10) infinite;
+    transform: translate(-24%, -13%);
+}
+@keyframes stand {
+    100% {
+        background-position: -1380px, 0;
+    }
 }
 
+
+/* CLICK START TO RUN */
+
+.running {
+    position: absolute;
+    background-image: url('img/run75.png');
+    width: 110px;
+    height: 120px;
+    animation: run 1s steps(8) infinite; 
+    transform: translate(-33%, -13%);   
+}
+
+@keyframes run {
+    100% {
+        background-position: -1104px, 0;
+    }
+}
+
+
+/* PRESS SPACE BAR TO JUMP */
 
 .jumping {
-    animation: jump 800ms;
-
+    position: absolute;
+    background-image: url('img/jump75.png'); 
+    width: 110px;
+    height: 120px;
+    animation: jump 800ms steps(8) infinite;
+    transform: translate(-20%, -13%); 
 }
 
- @keyframes jump {  
-    0% {top: 200px;}
-    50% {top: 100px}
-    100% {top: 200px;}
-}
-
-.moving {
-    animation: runningCat 800ms steps(8) infinite;
-}
-
- @keyframes runningCat {
-    from {
-       transform: translate3d(0,0,0px)
+@keyframes jump { 
+    100% {
+        background-position: -1101px, 0px;
     }
-    to {
-       transform: translate3d(-100%,0,100px)
-    }
- } 
+    
+}
 
-.obstacle {
+
+/* WHEN HIT OBSTACLE */
+
+.fainting {
+    position: absolute;
+    background-image: url('img/die75.png');
+    width: 135px;
+    height: 120px;
+    animation: faint 1s steps(10) infinite;
+}
+
+@keyframes faint {
+    100% {
+        background-position: -1410px, 0;
+    }
+}
+
+/* SLIDE */
+
+.sliding {
+    position: absolute;
+    background-image: url('img/slide75.png');
+    width: 110px;
+    height: 120px;
+    animation: slide 1s steps(10) infinite;
+    transform: translate(-8%, -15%);
+}
+
+@keyframes slide {
+    100% {
+        background-position: -1380px, 0;
+    }
+}
+
+
+/* --------  OBSTACLES  ------- */
+
+
+.newObstacle {
+    right: -120px;
+}
+/* ---  BUSHES  --- */
+
+.bushOne {
+    position: absolute;
+    width: 120px;
+    height: 70px;
+    top: 240px;
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+    background-image: url('img/resbush1.png');
+    background-repeat: no-repeat;
+    animation: fly 5s 1 linear;
+}
+
+.bushTwo {
+    position: absolute;
+    width: 57px;
+    height: 60px;
+    top: 249px;
+    left: 100%;
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+    background-image: url('img/resbush2.png');
+    background-repeat: no-repeat;
+    animation: fly 5s 1 linear;
+}
+
+.bushThree {
+
+    position: absolute;
+    width: 125px;
+    height: 70px;
+    top: 242px;
+    left: 100%;
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+    background-image: url('img/resbush3.png');
+    background-repeat: no-repeat;
+    animation: fly 5s 1 linear;
+}
+
+.bushFour {
+    position: absolute;
     width: 50px;
     height: 50px;
-    background-color: pink;
-    position: relative;
-    top: 180px;
-    left: 750px;
+    top: 252px;
+    left: 100%;
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+    background-image: url('img/resbush4.png');
+    background-repeat: no-repeat;
+    animation: fly 5s 1 linear;
+    
 }
 
-.obstacleMoving {
-    animation: obstacleMove 800ms infinite linear;
+/* ---  Trees  --- */
+
+.treeOne {
+    position: absolute;
+    width: 45px;
+    height: 100px;
+    top: 200px;
+    left: 1000%;
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+    background-image: url('img/restree1.png');
+    background-repeat: no-repeat;
+    animation: fly 5s 1 linear;
 }
-@keyframes obstacleMove {
-    0% {left: 1000px;}
-    50% {left: 500px;}
-    100% {left: -50px}
+
+.treeTwo {
+    position: absolute;
+    width: 50px;
+    height: 120px;
+    top: 183px;
+    left: 1000%;
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+    background-image: url('img/restree2.png');
+    background-repeat: no-repeat;
+    animation: fly 5s 1 linear;
+}
+
+.treeThree {
+    position: absolute;
+    width: 50px;
+    height: 120px;
+    top: 181px;
+    left: 100%;
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+    background-image: url('img/restree3.png');
+    animation: fly 5s 1 linear;
+}
+.treeFour {
+    position: absolute;
+    width: 50px;
+    height: 120px;
+    top: 180px;
+    left: 100%;
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+    background-image: url('img/restree4.png');
+    background-repeat: no-repeat;
+    animation: fly 5s 1 linear;
+}
+
+
+/* ---  FENCES  --- */
+
+.fenceOne {
+    position: absolute;
+    width: 105px;
+    height: 80px;
+    top: 225px;
+    left: 100%;
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+    background-image: url('img/resfence1.png');
+    background-repeat: no-repeat;
+    animation: fly 5s 1 linear;
+}
+
+/* ---  CLOUDS  --- */
+
+.cloudOne {
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    top: 50px;
+    left: 100%;
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+    background-image: url('img/rescloud1.png');
+    background-repeat: no-repeat;
+    animation: fly 5s 1 linear;
+}
+
+@keyframes fly { 
+    0% {left: 100%;}
+    100% {left: -300px;}    
+}
+
+.cloudTwo {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    top: 115px;
+    left: 100%;
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+    background-image: url('img/rescloud2.png');
+    background-repeat: no-repeat;
+    animation: fly 5s 1 linear;
+}
+
+/* ---  MOONS  --- */
+
+.moonOne {
+    position: absolute;
+    width: 160px;
+    height: 155px;
+    top: 70px;
+    left: 100%;
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+    background-image: url('img/moon1.png');
+    background-repeat: no-repeat;
+    animation: fly 5s 1 linear;
+}
+
+.moonTwo {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: 100%;
+    top: -165px;
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+    background-image: url('img/moon2.png');
+    background-repeat: no-repeat;
+    animation: fly 5s 1 linear;
 }

@@ -5,39 +5,175 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="newJs.js"></script>
     <title>Chamoue Runner</title>
 </head>
 
 <body>
+    <header>
+        <h1>CHAMOUE RUNNER</h1>
+    </header>
 
-    <!-- GAME SECTION -->
-    <h1>Chamoue Runner</h1>
-    <div class="game">
-        <div class="container">
-            <div class="player">
-                <div class="character">
-                    <img class="moving" src="images/spritesheet run.png" alt="Cat run">
+
+
+    <section>
+        <button id="menu" type="button">MENU</button>
+        <nav class="nav-bar">
+            <ul class="menu-list">
+                <li class="item-Intro"><a href="#">INTRO</a></li>
+                <li class="item-Rules"><a href="#">RULES</a></li>
+                <li class="item-Obstacles"><a href="#">OBSTACLES</a></li>
+                <li class="item-ThankYou"><a href="#">THANK YOU</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <!------------------- SECTION ONE ------------------->
+    <div class="content">
+        <section>
+            <div class="hidden displayA">
+                <h3>INTRO</h3>
+                <h4>GET TO KNOW THE CHARACTER</h4>
+                <div class="img"></div>
+                <p>Hello player! My name is Chamoue. <br>
+                    I'm a traveller, an adventurer !!<br>
+                    My goal is to travel all over the world. <br>
+                    You mission is to lead me to the end of my Journey.<br>
+                    My happiness depends on YOU now !! Meowwww
+                </p>
+            </div>
+        </section>
+
+        <!------------------- SECTION TWO ------------------->
+
+        <div class="content">
+            <section>
+                <div class="hidden displayB">
+                  <div class="grid-container">
+                    <div class="sprite1">
+                      <div id="demonstrateRunning"></div>
+                    </div>
+                    <div class="sprite2">
+                      <div id="demonstrateJumping"></div>
+                    </div>
+                    <div class="sprite3">
+                      <div id="demonstrateSliding"></div>
+                    </div>
+                    <div class="sprite4">
+                      <div id="demonstrateFainting"></div>
+                    </div>
+          
+                    <div class="desc1">
+                      <p>You don't have to do anything to make me run! <br>
+                        I'm the greatest RUNNERRRRRR of all time!</p>
+                    </div>
+                    <div class="desc2">
+                      <p>when you encounter obstacles, press SPACE BAR to JUMPPPPP</p>
+                    </div>
+                    <div class="desc3">
+                      <p>If you want me to slide, then press ENTER </p>
+                    </div>
+                    <div class="desc4">
+                      <p>I will faint out everytime I've got hit by these obstacles!<br>
+                        CHAMOUE NO LIKEY !!!!! Meowwwww</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+        </div>
+    
+        <!------------------- SECTION THREE ------------------->
+
+        <section>
+            <div class="hidden displayC">
+                <h3 class="sec3-title">OBSTACLES</h3>
+                <h4>What are obstacles that Chamoue no likey !!!! </h4>
+                <div class="demonstrateObstacles">
+                    <div class="obst">
+                        <img src="img/resbush1.png" alt="">
+                    </div>
+                    <div class="obst">
+                        <img src="img/resbush2.png" alt="">
+                    </div>
+                    <div class="obst">
+                        <img src="img/resbush3.png" alt="">
+                    </div>
+                    <div class="obst img4">
+                        <img src="img/resbush4.png" alt="">
+                    </div>
+                    <div class="obst">
+                        <img src="img/restree1.png" alt="">
+                    </div>
+                    <div class="obst">
+                        <img src="img/restree2.png" alt="">
+                    </div>
+                    <div class="obst">
+                        <img src="img/restree3.png" alt="">
+                    </div>
+                    <div class="obst">
+                        <img src="img/restree4.png" alt="">
+                    </div>
+                    <div class="obst img9">
+                        <img src="img/resfence1.png" alt="">
+                    </div>
+                    <div class="obst img10">
+                        <img src="img/rescloud1.png" alt="">
+                    </div>
+                    <div class="obst img11">
+                        <img src="img/rescloud2.png" alt="">
+                    </div>
+                    <div class="obst img12">
+                        <img src="img/resmoon1.png" alt="">
+                    </div>
+                    <div class="obst img13">
+                        <img src="img/resmoon2.png" alt="">
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="obstacle">
-                <!-- <img src="images/DOG.png" alt="dog"> -->
+
+        <!------------------- SECTION FOUR ------------------->
+
+        <section>
+            <div class="hidden displayD">
+                <h3>THANK YOU</h3>
+                <p>I would like to say thanks to all my teachers who guided me to this beautiful victory. <br>
+                    Also thank you to all of you who is enjoying this game. <br>
+                    I Hope that this little story of Chamoue will make you smile. !<br>
+                    <br>
+                    Enjoy the show ! Meowwwww
+                </p>
+            </div>
+        </section>
+    </div>
+
+
+
+    <section class="welcome-Page">
+        <div class="firstPageChamoue"></div>
+        <p>press ENTER to start....</p>
+        <!-- <button id="playGame" type="button"></button> -->
+    </section>
+
+
+    <!------------------- GAME SECTION ------------------->
+    <section>
+        <div class="game game-hidden">
+            <div class="container"></div>
+            <div id="character1" class="character">
+                <div class="player stayStill"></div>
+            </div>
+            <div>
+                <h3>SCORE : <span id="score">0</span></h3>
             </div>
         </div>
-    </div>
-    <div>
-        <h3>SCORE : <span id="score">0</span></h3>
-    </div>
 
-    <div>
-        <button id="start-game" type="button">START</button>
-    </div>
-    </div>
-
-
-
-    <script src="newJs.js"></script>
+    </section>
+    <script src="https://kit.fontawesome.com/b48a9297dd.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
